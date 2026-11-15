@@ -1,0 +1,111 @@
+{
+  "name": "@rmiasin/auth-sdk",
+  "version": "2.0.0",
+  "description": "Official TypeScript & Universal SDK for 'Logging In with RMASIN' sovereign identity authentication, OAuth consent token exchange, Crockford Base32 RSID verification, enclave telemetry, and application database persistence.",
+  "homepage": "https://rmiasin.raltecalv.com",
+  "author": {
+    "name": "Raltécalv Sovereign Identity Foundation",
+    "url": "https://rmiasin.raltecalv.com"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.js",
+      "require": "./dist/node.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "*": ["dist/*", "dist/*.d.ts"],
+      "react": ["dist/react.d.ts"],
+      "node": ["dist/node.d.ts"]
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup && tsc --emitDeclarationOnly",
+    "dev": "tsup --watch",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "rmiasin",
+    "sovereign-identity",
+    "rsid",
+    "crockford-base32",
+    "oauth",
+    "auth",
+    "sso",
+    "login-with-rmiasin",
+    "identity-verification",
+    "enclave",
+    "raltecalv",
+    "celestial",
+    "react-auth",
+    "nextjs-auth",
+    "express-auth",
+    "zero-passwords",
+    "cryptographic-identity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raltecalv/rmiasin-auth-sdk.git",
+    "directory": "."
+  },
+  "bugs": {
+    "url": "https://github.com/raltecalv/rmiasin-auth-sdk/issues"
+  },
+  "funding": {
+    "type": "foundation",
+    "url": "https://rmiasin.raltecalv.com"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
